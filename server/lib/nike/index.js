@@ -1,24 +1,3 @@
-var express   = require('express');
-var app       = module.exports = express();
-var fs        = require('fs');
-var path      = require('path');
-
-app.get('/api/bower', function(req, res) {
-  res.send(fs.readFileSync(__dirname + '/../../../bower.json'));
-});
-
-app.get('/api/package', function(req, res) {
-  res.send(fs.readFileSync(__dirname + '/../../../package.json'));
-});
-
-
-//var Nike = require('../../nike/');
-
-//var Nike = require('node-nike');
-
-
-
-
 /**
  * Config
  */
@@ -91,24 +70,4 @@ NikePlusAPI.prototype.getGPSData = function(activityId) {
 
 var nikeplus = new NikePlusAPI();
 
-//nikeplus.getActivities();
-
-var requestObj = {
-    hostname: API_HOST,
-    path: API_BASE_PATH + 'sport' + API_QUERY_STRING,
-    headers: {
-      appid: API_APPID,
-      Accept: API_ACCEPT
-    }
-};
-
-app.get('/api/nike/basic', function(req, res) {
-    
-    https.request(requestObj, function(response) {
-        response.on("data", function(data) {
-            //console.log(data.toString());
-            res.send(data);
-        });
-    }).end();
-
-});
+nikeplus.getGPSData(16152883000);

@@ -8,7 +8,8 @@ angular
       
       var defaultParams = function() {
           return {
-              access_token: '8f9a3ae4c671f329bb62f26c577c6513'
+              access_token: '8f9a3ae4c671f329bb62f26c577c6513',
+              format: 'json'
           };
       };
       
@@ -18,7 +19,8 @@ angular
             return $http({method: 'GET', url: base + 'me/sport', params : defaultParams(), headers: { accept : 'application/json', appid : 'nike'}}).then(function (response) {
                 return response.data;
             });
-        }
+        },
+        getStats: function() { return $http.get('/api/nike/basic').then(function(response) { return response.data; }) }
       };
     }
   ])
