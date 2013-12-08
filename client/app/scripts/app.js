@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ngResource'])
+  .module('app', ['ngResource', 'ngRoute'])
   .config(['$routeProvider', function($router) {
     
     $router
