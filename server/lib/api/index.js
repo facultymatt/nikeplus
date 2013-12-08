@@ -22,7 +22,7 @@ app.get('/api/package', function(req, res) {
 /**
  * Config
  */
-var API_TOKEN = "8f9a3ae4c671f329bb62f26c577c6513";
+var API_TOKEN = "fa9435db977400af8b7cc364ab803f73";
 var API_HOST  = "api.nike.com";
 var API_BASE_PATH  = "/me/";
 var API_QUERY_STRING = "?access_token=" + API_TOKEN;
